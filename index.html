@@ -13,17 +13,14 @@
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#3498db">
+    <meta name="theme-color" content="#c0c0c0">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
 </head>
 <body>
-    <div class="gradient-bg"></div>
-    
+    <div class="background-image"></div>
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
@@ -49,100 +46,117 @@
         <div class="hero-content">
             <h1>Deletor</h1>
             <p class="subtitle">Powerful CLI utility for intelligent file management</p>
-            <div class="badges">
-                <img src="https://pkg.go.dev/badge/github.com/pashkov256/deletor/v1.svg" alt="Go Reference">
-                <img src="https://www.codetriage.com/pashkov256/tcache/badges/users.svg" alt="Code Helpers">
-            </div>
-            <div class="social-links">
-                <a href="https://t.me/pashkov256" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                    Telegram
-                </a>
+            <div class="about-info">
+                <p><i class="fas fa-info-circle"></i> Version 1.0.0</p>
+                <p><i class="fas fa-copyright"></i> Copyright © 2024</p>
+                <p><i class="fas fa-heart"></i> Made with ❤️ by pashkov256</p>
             </div>
         </div>
     </header>
 
     <main>
         <section id="features" class="section">
-            <h2>Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-trash"></i>
-                    <h3>Delete by Extension</h3>
-                    <p>Remove files with specific extensions like .mp4, .zip</p>
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>Features</span>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-ruler"></i>
-                    <h3>Size Filter</h3>
-                    <p>Delete files larger than specified size (10mb, 1gb)</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-folder-tree"></i>
-                    <h3>Recursive Search</h3>
-                    <p>Scan directories and all subdirectories</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Confirmation Prompt</h3>
-                    <p>Safe deletion with confirmation</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-table"></i>
-                    <h3>Table Output</h3>
-                    <p>Clean, formatted table display</p>
+                <div class="win95-content">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-trash"></i>
+                            <h3>Delete by Extension</h3>
+                            <p>Remove files with specific extensions like .mp4, .zip</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-ruler"></i>
+                            <h3>Size Filter</h3>
+                            <p>Delete files larger than specified size (10mb, 1gb)</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-folder-tree"></i>
+                            <h3>Recursive Search</h3>
+                            <p>Scan directories and all subdirectories</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Confirmation Prompt</h3>
+                            <p>Safe deletion with confirmation</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-table"></i>
+                            <h3>Table Output</h3>
+                            <p>Clean, formatted table display</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="installation" class="section">
-            <h2>Installation</h2>
-            <div class="code-block">
-                <pre><code class="language-bash">go install github.com/pashkov256/deletor</code></pre>
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>Installation</span>
+                </div>
+                <div class="win95-content">
+                    <div class="code-block">
+                        <pre><code>go install github.com/pashkov256/deletor</code></pre>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="usage" class="section">
-            <h2>Usage</h2>
-            <div class="code-block">
-                <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb</code></pre>
-            </div>
-            
-            <div class="arguments">
-                <h3>Arguments</h3>
-                <div class="argument-grid">
-                    <div class="argument-card">
-                        <h4>-e, --extensions</h4>
-                        <p>List of file extensions separated by commas (e.g., mp4,zip,jpg)</p>
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>Usage</span>
+                </div>
+                <div class="win95-content">
+                    <div class="code-block">
+                        <pre><code>deletor -e mp4,zip -d ~/Downloads/ -s 10mb</code></pre>
                     </div>
-                    <div class="argument-card">
-                        <h4>-d, --directory</h4>
-                        <p>Path to the directory to search for files</p>
-                    </div>
-                    <div class="argument-card">
-                        <h4>-s, --size</h4>
-                        <p>Maximum file size (e.g., 10b, 10kb, 10mb, 10gb)</p>
-                    </div>
-                    <div class="argument-card">
-                        <h4>--exclude</h4>
-                        <p>Exclude specific files/paths (e.g., data,backup)</p>
-                    </div>
-                    <div class="argument-card">
-                        <h4>-p, --progress</h4>
-                        <p>Display a progress bar during file scanning</p>
+                    
+                    <div class="arguments">
+                        <h3>Arguments</h3>
+                        <div class="argument-grid">
+                            <div class="feature-card">
+                                <h4>-e, --extensions</h4>
+                                <p>List of file extensions separated by commas (e.g., mp4,zip,jpg)</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>-d, --directory</h4>
+                                <p>Path to the directory to search for files</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>-s, --size</h4>
+                                <p>Maximum file size (e.g., 10b, 10kb, 10mb, 10gb)</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>--exclude</h4>
+                                <p>Exclude specific files/paths (e.g., data,backup)</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>-p, --progress</h4>
+                                <p>Display a progress bar during file scanning</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="examples" class="section">
-            <h2>Examples</h2>
-            <div class="example-card">
-                <h3>Basic Usage</h3>
-                <div class="code-block">
-                    <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 18kb</code></pre>
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>Examples</span>
                 </div>
-                <div class="output-block">
-                    <pre><code>2.96 MB    /home/user/Downloads/sample.zip
+                <div class="win95-content">
+                    <div class="feature-card">
+                        <h3>Basic Usage</h3>
+                        <div class="code-block">
+                            <pre><code>deletor -e mp4,zip -d ~/Downloads/ -s 18kb</code></pre>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>2.96 MB    /home/user/Downloads/sample.zip
 155.14 KB  /home/user/Downloads/image.jpg
 370.86 KB  /home/user/Downloads/document.png
 
@@ -150,100 +164,122 @@
 
 Delete these files? [y/n]: y
 ✓ Deleted: 2.52 MB</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>With Progress Bar</h3>
+                        <div class="code-block">
+                            <pre><code>deletor -e mp4,zip -d ~/Downloads/ -s 10mb -p</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>With Exclusions</h3>
+                        <div class="code-block">
+                            <pre><code>deletor -e mp4,zip -d ~/Downloads/ -s 10mb --exclude backup,important</code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="example-card">
-                <h3>With Progress Bar</h3>
-                <div class="code-block">
-                    <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb -p</code></pre>
+        <section id="contributors" class="section">
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>Contributors</span>
+                </div>
+                <div class="win95-content">
+                    <div class="contributors-grid" id="contributors-list">
+                        <!-- Contributors will be loaded here via JavaScript -->
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="example-card">
-                <h3>With Exclusions</h3>
-                <div class="code-block">
-                    <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb --exclude backup,important</code></pre>
+        <section id="statistics" class="section">
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>Project Statistics</span>
+                </div>
+                <div class="win95-content">
+                    <div class="stats-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-star"></i>
+                            <div class="stat-content">
+                                <span class="stat-value" id="stars-count">-</span>
+                                <span class="stat-label">Stars</span>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-code-branch"></i>
+                            <div class="stat-content">
+                                <span class="stat-value" id="forks-count">-</span>
+                                <span class="stat-label">Forks</span>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <div class="stat-content">
+                                <span class="stat-value" id="issues-count">-</span>
+                                <span class="stat-label">Issues</span>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-code"></i>
+                            <div class="stat-content">
+                                <span class="stat-value" id="commits-count">-</span>
+                                <span class="stat-label">Commits</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="issues-section">
+                        <h3>Recent Issues</h3>
+                        <div class="issues-grid" id="issues-list">
+                            <!-- Issues will be loaded here via JavaScript -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="license" class="section">
-            <h2>License</h2>
-            <p>This project is distributed under the MIT license.</p>
-            <div class="contribute">
-                <h3>Contribute</h3>
-                <a href="https://github.com/pashkov256/deletor/blob/main/CONTRIBUTING.md" class="button">
-                    <i class="fab fa-github"></i>
-                    View Contributing Guidelines
-                </a>
-            </div>
-        </section>
-
-        <section id="contributors" class="section">
-            <h2>Contributors</h2>
-            <div class="contributors-grid" id="contributors-list">
-                <!-- Contributors will be loaded here via JavaScript -->
-            </div>
-        </section>
-
-        <section id="statistics" class="section">
-            <h2>Project Statistics</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fas fa-star"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="stars-count">-</span>
-                        <span class="stat-label">Stars</span>
-                    </div>
+            <div class="win95-window">
+                <div class="win95-titlebar">
+                    <span>License</span>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-code-branch"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="forks-count">-</span>
-                        <span class="stat-label">Forks</span>
+                <div class="win95-content">
+                    <p>This project is distributed under the MIT license.</p>
+                    <div class="contribute">
+                        <h3>Contribute</h3>
+                        <a href="https://github.com/pashkov256/deletor/blob/main/CONTRIBUTING.md" class="win95-button">
+                            <i class="fab fa-github"></i>
+                            View Contributing Guidelines
+                        </a>
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="issues-count">-</span>
-                        <span class="stat-label">Issues</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-code"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="commits-count">-</span>
-                        <span class="stat-label">Commits</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="issues-section">
-                <h3>Recent Issues</h3>
-                <div class="issues-grid" id="issues-list">
-                    <!-- Issues will be loaded here via JavaScript -->
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>Made with ❤️ by <a href="https://github.com/pashkov256">pashkov256</a></p>
-            <div class="social-links">
-                <a href="https://t.me/pashkov256" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                    Telegram
-                </a>
+        <div class="win95-window">
+            <div class="win95-titlebar">
+                <span>About</span>
+            </div>
+            <div class="win95-content">
+                <p>Made with ❤️ by <a href="https://github.com/pashkov256">pashkov256</a></p>
+                <div class="social-links">
+                    <a href="https://t.me/pashkov256" class="win95-button" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        Telegram
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
         // Burger menu functionality
         const burgerMenu = document.querySelector('.burger-menu');
@@ -274,7 +310,7 @@ Delete these files? [y/n]: y
                 const contributorsList = document.getElementById('contributors-list');
                 contributors.forEach(contributor => {
                     const contributorCard = document.createElement('div');
-                    contributorCard.className = 'contributor-card';
+                    contributorCard.className = 'feature-card';
                     contributorCard.innerHTML = `
                         <a href="${contributor.html_url}" target="_blank" class="contributor-link">
                             <img src="${contributor.avatar_url}" alt="${contributor.login}" class="contributor-avatar">
@@ -313,7 +349,7 @@ Delete these files? [y/n]: y
                 const issuesList = document.getElementById('issues-list');
                 issues.forEach(issue => {
                     const issueCard = document.createElement('div');
-                    issueCard.className = 'issue-card';
+                    issueCard.className = 'feature-card';
                     
                     const labels = issue.labels.map(label => 
                         `<span class="issue-label" style="background-color: #${label.color}">${label.name}</span>`
