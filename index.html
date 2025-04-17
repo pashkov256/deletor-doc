@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deletor - File Management CLI Tool</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3498db">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,6 +30,11 @@
                 <i class="fas fa-trash-alt"></i>
                 <span>Deletor</span>
             </div>
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#installation">Installation</a></li>
@@ -169,6 +186,47 @@ Delete these files? [y/n]: y
                 <!-- Contributors will be loaded here via JavaScript -->
             </div>
         </section>
+
+        <section id="statistics" class="section">
+            <h2>Project Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-content">
+                        <span class="stat-value" id="stars-count">-</span>
+                        <span class="stat-label">Stars</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="stat-content">
+                        <span class="stat-value" id="forks-count">-</span>
+                        <span class="stat-label">Forks</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div class="stat-content">
+                        <span class="stat-value" id="issues-count">-</span>
+                        <span class="stat-label">Issues</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-code"></i>
+                    <div class="stat-content">
+                        <span class="stat-value" id="commits-count">-</span>
+                        <span class="stat-label">Commits</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="issues-section">
+                <h3>Recent Issues</h3>
+                <div class="issues-grid" id="issues-list">
+                    <!-- Issues will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -187,6 +245,26 @@ Delete these files? [y/n]: y
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
+        // Burger menu functionality
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
         // Fetch contributors from GitHub API
         async function loadContributors() {
             try {
@@ -211,8 +289,68 @@ Delete these files? [y/n]: y
             }
         }
 
-        // Load contributors when the page loads
-        document.addEventListener('DOMContentLoaded', loadContributors);
+        // Fetch repository statistics
+        async function loadStatistics() {
+            try {
+                const response = await fetch('https://api.github.com/repos/pashkov256/deletor');
+                const data = await response.json();
+                
+                document.getElementById('stars-count').textContent = data.stargazers_count;
+                document.getElementById('forks-count').textContent = data.forks_count;
+                document.getElementById('issues-count').textContent = data.open_issues_count;
+                document.getElementById('commits-count').textContent = data.default_branch;
+            } catch (error) {
+                console.error('Error loading statistics:', error);
+            }
+        }
+
+        // Fetch recent issues
+        async function loadIssues() {
+            try {
+                const response = await fetch('https://api.github.com/repos/pashkov256/deletor/issues?state=open&sort=updated&direction=desc&per_page=6');
+                const issues = await response.json();
+                
+                const issuesList = document.getElementById('issues-list');
+                issues.forEach(issue => {
+                    const issueCard = document.createElement('div');
+                    issueCard.className = 'issue-card';
+                    
+                    const labels = issue.labels.map(label => 
+                        `<span class="issue-label" style="background-color: #${label.color}">${label.name}</span>`
+                    ).join('');
+
+                    issueCard.innerHTML = `
+                        <div class="issue-header">
+                            <a href="${issue.html_url}" target="_blank" class="issue-title">${issue.title}</a>
+                            <span class="issue-number">#${issue.number}</span>
+                        </div>
+                        <div class="issue-labels">
+                            ${labels}
+                        </div>
+                        <div class="issue-meta">
+                            <span class="issue-date">
+                                <i class="far fa-clock"></i>
+                                ${new Date(issue.updated_at).toLocaleDateString()}
+                            </span>
+                            <span class="issue-comments">
+                                <i class="far fa-comment"></i>
+                                ${issue.comments}
+                            </span>
+                        </div>
+                    `;
+                    issuesList.appendChild(issueCard);
+                });
+            } catch (error) {
+                console.error('Error loading issues:', error);
+            }
+        }
+
+        // Load all data when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContributors();
+            loadStatistics();
+            loadIssues();
+        });
     </script>
 </body>
 </html> 
