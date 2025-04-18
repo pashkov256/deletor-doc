@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deletor - File Management CLI Tool</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    
+
     <!-- Theme Color -->
-    <meta name="theme-color" content="#3498db">
-    
+    <meta name="theme-color" content="#000000">
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="gradient-bg"></div>
-    
+    <div class="noise"></div>
+
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
@@ -47,87 +52,222 @@
 
     <header class="hero">
         <div class="hero-content">
+            <div class="hero-badge">CLI Tool</div>
             <h1>Deletor</h1>
             <p class="subtitle">Powerful CLI utility for intelligent file management</p>
+            <div class="cta-buttons">
+                <a href="#installation" class="primary-button">
+                    <i class="fas fa-download"></i>
+                    Get Started
+                </a>
+                <a href="https://github.com/pashkov256/deletor" class="secondary-button" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
             <div class="badges">
                 <img src="https://pkg.go.dev/badge/github.com/pashkov256/deletor/v1.svg" alt="Go Reference">
                 <img src="https://www.codetriage.com/pashkov256/tcache/badges/users.svg" alt="Code Helpers">
             </div>
-            <div class="social-links">
-                <a href="https://t.me/pashkov256" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                    Telegram
-                </a>
-            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-sphere"></div>
         </div>
     </header>
 
     <main>
         <section id="features" class="section">
-            <h2>Features</h2>
+            <div class="section-header">
+                <h2>Features</h2>
+                <p class="section-description">Powerful tools for efficient file management</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-trash"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-trash"></i>
+                    </div>
                     <h3>Delete by Extension</h3>
                     <p>Remove files with specific extensions like .mp4, .zip</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-ruler"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-ruler"></i>
+                    </div>
                     <h3>Size Filter</h3>
                     <p>Delete files larger than specified size (10mb, 1gb)</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-folder-tree"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-folder-tree"></i>
+                    </div>
                     <h3>Recursive Search</h3>
                     <p>Scan directories and all subdirectories</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-check-circle"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
                     <h3>Confirmation Prompt</h3>
                     <p>Safe deletion with confirmation</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-table"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
                     <h3>Table Output</h3>
                     <p>Clean, formatted table display</p>
                 </div>
             </div>
         </section>
 
+        <section id="github-stats" class="section">
+         
+            <section id="statistics" class="section">
+                <div class="section-header">
+                    <h2>Project Statistics</h2>
+                    <p class="section-description">Community-driven development</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="stars-count">-</span>
+                            <span class="stat-label">Stars</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="forks-count">-</span>
+                            <span class="stat-label">Forks</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="issues-count">-</span>
+                            <span class="stat-label">Issues</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="commits-count">-</span>
+                            <span class="stat-label">Commits</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="stats-container">
+                <div class="stats-card">
+                    <h3>Repository Statistics</h3>
+                    <div id="repo-stats" class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Stars</span>
+                            <span id="stars-count" class="stat-value">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Forks</span>
+                            <span id="forks-count" class="stat-value">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Issues</span>
+                            <span id="issues-count" class="stat-value">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Pull Requests</span>
+                            <span id="pr-count" class="stat-value">-</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-header">
+                    <h2>GitHub Statistics</h2>
+                    <p class="section-description">Project insights and contributors</p>
+                </div>
+                <div class="contributors-card">
+                    <h3>Contributors</h3>
+                    <div id="contributors-list" class="contributors-grid">
+                        <!-- Contributors will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="installation" class="section">
-            <h2>Installation</h2>
+            <div class="section-header">
+                <h2>Installation</h2>
+                <p class="section-description">Get started with Deletor in seconds</p>
+            </div>
             <div class="code-block">
+                <div class="code-header">
+                    <span>Installation Command</span>
+                    <button class="copy-button" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
                 <pre><code class="language-bash">go install github.com/pashkov256/deletor</code></pre>
             </div>
         </section>
 
         <section id="usage" class="section">
-            <h2>Usage</h2>
+            <div class="section-header">
+                <h2>Usage</h2>
+                <p class="section-description">Simple and powerful command-line interface</p>
+            </div>
             <div class="code-block">
+                <div class="code-header">
+                    <span>Basic Usage</span>
+                    <button class="copy-button" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
                 <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb</code></pre>
             </div>
-            
+
             <div class="arguments">
-                <h3>Arguments</h3>
+                <h3>Command Arguments</h3>
                 <div class="argument-grid">
                     <div class="argument-card">
-                        <h4>-e, --extensions</h4>
+                        <div class="argument-header">
+                            <h4>-e, --extensions</h4>
+                            <span class="argument-type">string</span>
+                        </div>
                         <p>List of file extensions separated by commas (e.g., mp4,zip,jpg)</p>
                     </div>
                     <div class="argument-card">
-                        <h4>-d, --directory</h4>
+                        <div class="argument-header">
+                            <h4>-d, --directory</h4>
+                            <span class="argument-type">string</span>
+                        </div>
                         <p>Path to the directory to search for files</p>
                     </div>
                     <div class="argument-card">
-                        <h4>-s, --size</h4>
+                        <div class="argument-header">
+                            <h4>-s, --size</h4>
+                            <span class="argument-type">string</span>
+                        </div>
                         <p>Maximum file size (e.g., 10b, 10kb, 10mb, 10gb)</p>
                     </div>
                     <div class="argument-card">
-                        <h4>--exclude</h4>
+                        <div class="argument-header">
+                            <h4>--exclude</h4>
+                            <span class="argument-type">string</span>
+                        </div>
                         <p>Exclude specific files/paths (e.g., data,backup)</p>
                     </div>
                     <div class="argument-card">
-                        <h4>-p, --progress</h4>
+                        <div class="argument-header">
+                            <h4>-p, --progress</h4>
+                            <span class="argument-type">boolean</span>
+                        </div>
                         <p>Display a progress bar during file scanning</p>
                     </div>
                 </div>
@@ -135,13 +275,25 @@
         </section>
 
         <section id="examples" class="section">
-            <h2>Examples</h2>
+            <div class="section-header">
+                <h2>Examples</h2>
+                <p class="section-description">Real-world usage examples</p>
+            </div>
             <div class="example-card">
                 <h3>Basic Usage</h3>
                 <div class="code-block">
+                    <div class="code-header">
+                        <span>Example Command</span>
+                        <button class="copy-button" onclick="copyCode(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
                     <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 18kb</code></pre>
                 </div>
                 <div class="output-block">
+                    <div class="code-header">
+                        <span>Output</span>
+                    </div>
                     <pre><code>2.96 MB    /home/user/Downloads/sample.zip
 155.14 KB  /home/user/Downloads/image.jpg
 370.86 KB  /home/user/Downloads/document.png
@@ -156,6 +308,12 @@ Delete these files? [y/n]: y
             <div class="example-card">
                 <h3>With Progress Bar</h3>
                 <div class="code-block">
+                    <div class="code-header">
+                        <span>Example Command</span>
+                        <button class="copy-button" onclick="copyCode(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
                     <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb -p</code></pre>
                 </div>
             </div>
@@ -163,79 +321,52 @@ Delete these files? [y/n]: y
             <div class="example-card">
                 <h3>With Exclusions</h3>
                 <div class="code-block">
+                    <div class="code-header">
+                        <span>Example Command</span>
+                        <button class="copy-button" onclick="copyCode(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
                     <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb --exclude backup,important</code></pre>
                 </div>
             </div>
         </section>
 
         <section id="license" class="section">
-            <h2>License</h2>
-            <p>This project is distributed under the MIT license.</p>
-            <div class="contribute">
-                <h3>Contribute</h3>
-                <a href="https://github.com/pashkov256/deletor/blob/main/CONTRIBUTING.md" class="button">
-                    <i class="fab fa-github"></i>
-                    View Contributing Guidelines
-                </a>
+            <div class="section-header">
+                <h2>License</h2>
+                <p class="section-description">Open source under MIT license</p>
+            </div>
+            <div class="license-content">
+                <p>This project is distributed under the MIT license.</p>
+                <div class="contribute">
+                    <h3>Contribute</h3>
+                    <a href="https://github.com/pashkov256/deletor/blob/main/CONTRIBUTING.md" class="button">
+                        <i class="fab fa-github"></i>
+                        View Contributing Guidelines
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="contributors" class="section">
-            <h2>Contributors</h2>
-            <div class="contributors-grid" id="contributors-list">
-                <!-- Contributors will be loaded here via JavaScript -->
-            </div>
-        </section>
-
-        <section id="statistics" class="section">
-            <h2>Project Statistics</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fas fa-star"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="stars-count">-</span>
-                        <span class="stat-label">Stars</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-code-branch"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="forks-count">-</span>
-                        <span class="stat-label">Forks</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="issues-count">-</span>
-                        <span class="stat-label">Issues</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-code"></i>
-                    <div class="stat-content">
-                        <span class="stat-value" id="commits-count">-</span>
-                        <span class="stat-label">Commits</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="issues-section">
-                <h3>Recent Issues</h3>
-                <div class="issues-grid" id="issues-list">
-                    <!-- Issues will be loaded here via JavaScript -->
-                </div>
-            </div>
-        </section>
+      
     </main>
 
     <footer>
         <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-trash-alt"></i>
+                <span>Deletor</span>
+            </div>
             <p>Made with ❤️ by <a href="https://github.com/pashkov256">pashkov256</a></p>
             <div class="social-links">
                 <a href="https://t.me/pashkov256" class="social-link" target="_blank">
                     <i class="fab fa-telegram"></i>
                     Telegram
+                </a>
+                <a href="https://github.com/pashkov256/deletor" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
                 </a>
             </div>
         </div>
@@ -243,114 +374,41 @@ Delete these files? [y/n]: y
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="github-stats.js"></script>
     <script>
         // Burger menu functionality
         const burgerMenu = document.querySelector('.burger-menu');
         const navLinks = document.querySelector('.nav-links');
-        const body = document.body;
 
         burgerMenu.addEventListener('click', () => {
             burgerMenu.classList.toggle('active');
             navLinks.classList.toggle('active');
-            body.classList.toggle('menu-open');
         });
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove('active');
-                navLinks.classList.remove('active');
-                body.classList.remove('menu-open');
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block').querySelector('code');
+            const text = codeBlock.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
             });
-        });
+        }
 
-        // Fetch contributors from GitHub API
-        async function loadContributors() {
-            try {
-                const response = await fetch('https://api.github.com/repos/pashkov256/deletor/contributors');
-                const contributors = await response.json();
-                
-                const contributorsList = document.getElementById('contributors-list');
-                contributors.forEach(contributor => {
-                    const contributorCard = document.createElement('div');
-                    contributorCard.className = 'contributor-card';
-                    contributorCard.innerHTML = `
-                        <a href="${contributor.html_url}" target="_blank" class="contributor-link">
-                            <img src="${contributor.avatar_url}" alt="${contributor.login}" class="contributor-avatar">
-                            <span class="contributor-name">${contributor.login}</span>
-                            <span class="contributor-count">${contributor.contributions} contributions</span>
-                        </a>
-                    `;
-                    contributorsList.appendChild(contributorCard);
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-            } catch (error) {
-                console.error('Error loading contributors:', error);
-            }
-        }
-
-        // Fetch repository statistics
-        async function loadStatistics() {
-            try {
-                const response = await fetch('https://api.github.com/repos/pashkov256/deletor');
-                const data = await response.json();
-                
-                document.getElementById('stars-count').textContent = data.stargazers_count;
-                document.getElementById('forks-count').textContent = data.forks_count;
-                document.getElementById('issues-count').textContent = data.open_issues_count;
-                document.getElementById('commits-count').textContent = data.default_branch;
-            } catch (error) {
-                console.error('Error loading statistics:', error);
-            }
-        }
-
-        // Fetch recent issues
-        async function loadIssues() {
-            try {
-                const response = await fetch('https://api.github.com/repos/pashkov256/deletor/issues?state=open&sort=updated&direction=desc&per_page=6');
-                const issues = await response.json();
-                
-                const issuesList = document.getElementById('issues-list');
-                issues.forEach(issue => {
-                    const issueCard = document.createElement('div');
-                    issueCard.className = 'issue-card';
-                    
-                    const labels = issue.labels.map(label => 
-                        `<span class="issue-label" style="background-color: #${label.color}">${label.name}</span>`
-                    ).join('');
-
-                    issueCard.innerHTML = `
-                        <div class="issue-header">
-                            <a href="${issue.html_url}" target="_blank" class="issue-title">${issue.title}</a>
-                            <span class="issue-number">#${issue.number}</span>
-                        </div>
-                        <div class="issue-labels">
-                            ${labels}
-                        </div>
-                        <div class="issue-meta">
-                            <span class="issue-date">
-                                <i class="far fa-clock"></i>
-                                ${new Date(issue.updated_at).toLocaleDateString()}
-                            </span>
-                            <span class="issue-comments">
-                                <i class="far fa-comment"></i>
-                                ${issue.comments}
-                            </span>
-                        </div>
-                    `;
-                    issuesList.appendChild(issueCard);
-                });
-            } catch (error) {
-                console.error('Error loading issues:', error);
-            }
-        }
-
-        // Load all data when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            loadContributors();
-            loadStatistics();
-            loadIssues();
+            });
         });
     </script>
 </body>
-</html> 
+
+</html>
