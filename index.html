@@ -1,414 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deletor - File Management CLI Tool</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#000000">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <title>Deletor - Modern File Cleaner</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 </head>
-
 <body>
-    <div class="noise"></div>
-
-    <nav class="navbar">
-        <div class="nav-content">
+    <header>
+        <nav>
             <div class="logo">
-                <i class="fas fa-trash-alt"></i>
-                <span>Deletor</span>
+                <img src="https://raw.githubusercontent.com/pashkov256/media/refs/heads/main/deletor/logo.png" alt="Deletor Logo">
             </div>
-            <button class="burger-menu" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#usage">Usage</a></li>
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="#license">License</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">CLI Tool</div>
-            <h1>Deletor</h1>
-            <p class="subtitle">Powerful CLI utility for intelligent file management</p>
-            <div class="cta-buttons">
-                <a href="#installation" class="primary-button">
-                    <i class="fas fa-download"></i>
-                    Get Started
-                </a>
-                <a href="https://github.com/pashkov256/deletor" class="secondary-button" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#installation">Installation</a>
+                <a href="#usage">Usage</a>
+                <a href="#contributing">Contributing</a>
+                <a href="https://github.com/pashkov256/deletor" class="github-button">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
-            <div class="badges">
-                <img src="https://pkg.go.dev/badge/github.com/pashkov256/deletor/v1.svg" alt="Go Reference">
-                <img src="https://www.codetriage.com/pashkov256/tcache/badges/users.svg" alt="Code Helpers">
-            </div>
-        </div>
-        <div class="hero-background">
-            <div class="gradient-sphere"></div>
-        </div>
+        </nav>
     </header>
 
     <main>
-        <section id="features" class="section">
-            <div class="section-header">
-                <h2>Features</h2>
-                <p class="section-description">Powerful tools for efficient file management</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-trash"></i>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Deletor</h1>
+                <p class="subtitle">Manage and delete files efficiently with an interactive TUI and scriptable CLI</p>
+                <div class="stats">
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span id="stars-count">9</span>
+                        <span>Stars</span>
                     </div>
+                    <div class="stat">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="forks-count">4</span>
+                        <span>Forks</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span id="contributors-count">5</span>
+                        <span>Contributors</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#installation" class="primary-button">Get Started</a>
+                    <a href="https://github.com/pashkov256/deletor" class="secondary-button">View on GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://raw.githubusercontent.com/pashkov256/media/refs/heads/main/deletor2.gif" alt="Deletor in action">
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Interactive TUI</h3>
+                    <p>Modern text-based user interface for easy file navigation and management</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-trash"></i>
                     <h3>Delete by Extension</h3>
-                    <p>Remove files with specific extensions like .mp4, .zip</p>
+                    <p>Deletes files with specified extensions (e.g., .mp4, .zip)</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-ruler"></i>
-                    </div>
+                <div class="feature">
+                    <i class="fas fa-ruler"></i>
                     <h3>Size Filter</h3>
-                    <p>Delete files larger than specified size (10mb, 1gb)</p>
+                    <p>Deletes only files larger than the specified size (e.g., 10mb, 1gb)</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-folder-tree"></i>
-                    </div>
-                    <h3>Recursive Search</h3>
-                    <p>Scan directories and all subdirectories</p>
+                <div class="feature">
+                    <i class="fas fa-folder"></i>
+                    <h3>Directory Navigation</h3>
+                    <p>Easy navigation through directories with arrow keys</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Confirmation Prompt</h3>
-                    <p>Safe deletion with confirmation</p>
+                <div class="feature">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>Quick Selection</h3>
+                    <p>Select and delete files with keyboard shortcuts</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-table"></i>
-                    </div>
-                    <h3>Table Output</h3>
-                    <p>Clean, formatted table display</p>
+                <div class="feature">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Rules System</h3>
+                    <p>Create and manage deletion presets for repeated use</p>
                 </div>
             </div>
         </section>
 
-        <section id="github-stats" class="section">
-         
-            <section id="statistics" class="section">
-                <div class="section-header">
-                    <h2>Project Statistics</h2>
-                    <p class="section-description">Community-driven development</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-value" id="stars-count">-</span>
-                            <span class="stat-label">Stars</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-value" id="forks-count">-</span>
-                            <span class="stat-label">Forks</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-exclamation-circle"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-value" id="issues-count">-</span>
-                            <span class="stat-label">Issues</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-value" id="commits-count">-</span>
-                            <span class="stat-label">Commits</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="stats-container">
-                <div class="stats-card">
-                    <h3>Repository Statistics</h3>
-                    <div id="repo-stats" class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-label">Stars</span>
-                            <span id="stars-count" class="stat-value">-</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Forks</span>
-                            <span id="forks-count" class="stat-value">-</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Issues</span>
-                            <span id="issues-count" class="stat-value">-</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Pull Requests</span>
-                            <span id="pr-count" class="stat-value">-</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-header">
-                    <h2>GitHub Statistics</h2>
-                    <p class="section-description">Project insights and contributors</p>
-                </div>
-                <div class="contributors-card">
-                    <h3>Contributors</h3>
-                    <div id="contributors-list" class="contributors-grid">
-                        <!-- Contributors will be added here dynamically -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="installation" class="section">
-            <div class="section-header">
-                <h2>Installation</h2>
-                <p class="section-description">Get started with Deletor in seconds</p>
-            </div>
+        <section id="installation" class="installation">
+            <h2>Installation</h2>
             <div class="code-block">
-                <div class="code-header">
-                    <span>Installation Command</span>
-                    <button class="copy-button" onclick="copyCode(this)">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-                <pre><code class="language-bash">go install github.com/pashkov256/deletor</code></pre>
+                <pre><code class="language-bash line-numbers">go install github.com/pashkov256/deletor</code></pre>
             </div>
         </section>
 
-        <section id="usage" class="section">
-            <div class="section-header">
-                <h2>Usage</h2>
-                <p class="section-description">Simple and powerful command-line interface</p>
-            </div>
-            <div class="code-block">
-                <div class="code-header">
-                    <span>Basic Usage</span>
-                    <button class="copy-button" onclick="copyCode(this)">
-                        <i class="fas fa-copy"></i>
-                    </button>
+        <section id="usage" class="usage">
+            <h2>Usage</h2>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h3>TUI Mode (default)</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash line-numbers">deletor -d ~/Downloads/</code></pre>
+                    </div>
                 </div>
-                <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb</code></pre>
-            </div>
-
-            <div class="arguments">
-                <h3>Command Arguments</h3>
-                <div class="argument-grid">
-                    <div class="argument-card">
-                        <div class="argument-header">
-                            <h4>-e, --extensions</h4>
-                            <span class="argument-type">string</span>
-                        </div>
-                        <p>List of file extensions separated by commas (e.g., mp4,zip,jpg)</p>
-                    </div>
-                    <div class="argument-card">
-                        <div class="argument-header">
-                            <h4>-d, --directory</h4>
-                            <span class="argument-type">string</span>
-                        </div>
-                        <p>Path to the directory to search for files</p>
-                    </div>
-                    <div class="argument-card">
-                        <div class="argument-header">
-                            <h4>-s, --size</h4>
-                            <span class="argument-type">string</span>
-                        </div>
-                        <p>Maximum file size (e.g., 10b, 10kb, 10mb, 10gb)</p>
-                    </div>
-                    <div class="argument-card">
-                        <div class="argument-header">
-                            <h4>--exclude</h4>
-                            <span class="argument-type">string</span>
-                        </div>
-                        <p>Exclude specific files/paths (e.g., data,backup)</p>
-                    </div>
-                    <div class="argument-card">
-                        <div class="argument-header">
-                            <h4>-p, --progress</h4>
-                            <span class="argument-type">boolean</span>
-                        </div>
-                        <p>Display a progress bar during file scanning</p>
+                <div class="usage-card">
+                    <h3>CLI Mode (with filters)</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash line-numbers">deletor -cli -e mp4,zip -d ~/Downloads/ -s 10mb</code></pre>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="examples" class="section">
-            <div class="section-header">
-                <h2>Examples</h2>
-                <p class="section-description">Real-world usage examples</p>
-            </div>
-            <div class="example-card">
-                <h3>Basic Usage</h3>
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>Example Command</span>
-                        <button class="copy-button" onclick="copyCode(this)">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                    <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 18kb</code></pre>
-                </div>
-                <div class="output-block">
-                    <div class="code-header">
-                        <span>Output</span>
-                    </div>
-                    <pre><code>2.96 MB    /home/user/Downloads/sample.zip
-155.14 KB  /home/user/Downloads/image.jpg
-370.86 KB  /home/user/Downloads/document.png
-
-7.48 MB  will be cleared.
-
-Delete these files? [y/n]: y
-✓ Deleted: 2.52 MB</code></pre>
+        <section id="contributing" class="contributing">
+            <h2 align="center">Contributing</h2>
+            <p align="center">We welcome and appreciate any contributions to Deletor! There are many ways you can help us grow and improve:</p>
+            <div class="contributors">
+                <h3 align="center">Our Contributors</h3>
+                <div class="contributor-grid" id="contributors-grid">
+                    <!-- Contributors will be loaded dynamically -->
                 </div>
             </div>
-
-            <div class="example-card">
-                <h3>With Progress Bar</h3>
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>Example Command</span>
-                        <button class="copy-button" onclick="copyCode(this)">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                    <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb -p</code></pre>
+            <div class="contribution-options">
+                <div class="option">
+                    <i class="fas fa-bug"></i>
+                    <h4>Report Bugs</h4>
+                    <p>Found an issue? Let us know by opening an issue.</p>
                 </div>
-            </div>
-
-            <div class="example-card">
-                <h3>With Exclusions</h3>
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>Example Command</span>
-                        <button class="copy-button" onclick="copyCode(this)">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                    <pre><code class="language-bash">deletor -e mp4,zip -d ~/Downloads/ -s 10mb --exclude backup,important</code></pre>
+                <div class="option">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Suggest Features</h4>
+                    <p>Got an idea for a new feature? We'd love to hear it!</p>
+                </div>
+                <div class="option">
+                    <i class="fas fa-book"></i>
+                    <h4>Improve Documentation</h4>
+                    <p>Help us make the docs even clearer and easier to use.</p>
+                </div>
+                <div class="option">
+                    <i class="fas fa-code"></i>
+                    <h4>Submit Code</h4>
+                    <p>Fix a bug, refactor code, or add new functionality.</p>
                 </div>
             </div>
         </section>
-
-        <section id="license" class="section">
-            <div class="section-header">
-                <h2>License</h2>
-                <p class="section-description">Open source under MIT license</p>
-            </div>
-            <div class="license-content">
-                <p>This project is distributed under the MIT license.</p>
-                <div class="contribute">
-                    <h3>Contribute</h3>
-                    <a href="https://github.com/pashkov256/deletor/blob/main/CONTRIBUTING.md" class="button">
-                        <i class="fab fa-github"></i>
-                        View Contributing Guidelines
-                    </a>
-                </div>
-            </div>
-        </section>
-
-      
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <i class="fas fa-trash-alt"></i>
-                <span>Deletor</span>
+                <img src="https://raw.githubusercontent.com/pashkov256/media/refs/heads/main/deletor/logo.png" alt="Deletor Logo">
             </div>
-            <p>Made with ❤️ by <a href="https://github.com/pashkov256">pashkov256</a></p>
-            <div class="social-links">
-                <a href="https://t.me/pashkov256" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                    Telegram
-                </a>
-                <a href="https://github.com/pashkov256/deletor" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
+            <div class="footer-links">
+                <a href="https://github.com/pashkov256/deletor">GitHub</a>
+                <a href="https://deepwiki.com/pashkov256/deletor">Documentation</a>
+                <a href="https://github.com/pashkov256/deletor/blob/main/LICENSE">License</a>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Deletor. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script src="github-stats.js"></script>
-    <script>
-        // Burger menu functionality
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        burgerMenu.addEventListener('click', () => {
-            burgerMenu.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Copy code functionality
-        function copyCode(button) {
-            const codeBlock = button.closest('.code-block').querySelector('code');
-            const text = codeBlock.textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                button.innerHTML = '<i class="fas fa-check"></i>';
-                setTimeout(() => {
-                    button.innerHTML = '<i class="fas fa-copy"></i>';
-                }, 2000);
-            });
-        }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
-</html>
+</html> 
